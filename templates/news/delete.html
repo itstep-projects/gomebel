@@ -1,0 +1,74 @@
+{% extends 'layout/base.html' %}
+
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+
+{% block content %}
+{% include 'layout/under_baner.html' %}
+<div id="content" class="container" style="align-items: center">
+    <hr>
+                        <div class="col-12 col-md-6 offset-xl-3 col-xl-5">
+							<h3 class="text-capitalize position-relative mb-0" style="padding-bottom: 20px">Вы собираетесь удалить новость:</h3>
+							<!-- pdDescrTable -->
+							<table class="table pdDescrTable">
+								<!-- tbody -->
+								<tbody>
+									<tr>
+										<td>
+											<!-- tdWrap -->
+											<div class="tdWrap">
+												Название:
+											</div>
+										</td>
+										<td>
+											<!-- tdWrap -->
+											<div class="tdWrap">
+												{{ post.title }}
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<!-- tdWrap -->
+											<div class="tdWrap">
+												Автор:
+											</div>
+										</td>
+										<td>
+											<!-- tdWrap -->
+											<div class="tdWrap">
+												{{ post.author }}
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<!-- tdWrap -->
+											<div class="tdWrap">
+												Дата публикации:
+											</div>
+										</td>
+										<td>
+											<!-- tdWrap -->
+											<div class="tdWrap">
+												<time datetime="2011-01-12">{{ post.published }}</time>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+                            <form action="/news/delete/{{ post.id }}" method="post">
+                                {% csrf_token %}
+                                <p style="margin-top: 30px">
+                                    <button id="submit" class="btn btnTheme text-uppercase" type="submit" data-hover="Удалить">
+                                        <span class="d-block btnText">Пимпочка удаления</span>
+                                    </button>
+                                </p>
+                            </form>
+						</div>
+    <hr>
+</div>
+{% endblock content %}

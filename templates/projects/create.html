@@ -1,0 +1,38 @@
+{% extends 'layout/base.html' %}
+
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+
+{% block content %}
+    {% load static %}
+    {% include 'layout/under_baner.html' %}
+    <div id="content" class="container" align="center" >
+        <aside class="widget widgetForm bg-white hasShadow rounded text-center mb-0">
+            <form id="form1" action="/projects/create" method="post" enctype="multipart/form-data">
+                {%  csrf_token %}
+                <div id="form_template">
+                {% for field in form %}
+                    <div class="form-group">
+                        {{ field.label_tag }}
+                        <div>{{ field }}</div>
+                    </div>
+                {% endfor %}
+                </div>
+
+                <p style="margin-top: 30px">
+                    <button id="submit" class="btn btnTheme text-uppercase" type="submit" data-hover="Отптавить" style="width: 150px">
+                        <span class="d-block btnText">Добавление</span>
+                    </button>
+                    <button class="btn btnTheme text-uppercase" type="reset" data-hover="Очистить" style="width: 150px">
+                        <span class="d-block btnText">Сброс</span>
+                    </button>
+                </p>
+
+            </form>
+        </aside>
+    </div>
+
+{% endblock content %}

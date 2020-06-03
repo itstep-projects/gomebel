@@ -1,0 +1,34 @@
+{% extends 'layout/base.html' %}
+
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+
+{% block content %}
+{% include 'layout/under_baner.html' %}
+<div id="content" class="container" align="center">
+    <hr>
+    <form action="/accounts/sign_in" method="post">
+        {%  csrf_token %}
+        <p>
+            <label for="login">Логин</label><br>
+            <input type="text" id="login" name="login" class="inp" required>
+        </p>
+        <p>
+            <label for="pass1">Пароль</label><br>
+            <input type="password" id="pass1" name="pass1" class="inp" required>
+        </p>
+        <p style="margin-top: 30px">
+            <button id="submit" class="btn btnTheme text-uppercase" type="submit" data-hover="Отптавить" style="width: 150px">
+                <span class="d-block btnText">Войти</span>
+            </button>
+            <button class="btn btnTheme text-uppercase" type="reset" data-hover="Очистить" style="width: 150px">
+                <span class="d-block btnText">Сброс</span>
+            </button>
+        </p>
+    </form>
+    <hr>
+</div>
+{% endblock content %}

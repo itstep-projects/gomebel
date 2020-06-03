@@ -1,0 +1,337 @@
+{% extends 'layout/base.html' %}
+
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+
+{% block content %}
+{% include 'layout/under_baner.html' %}
+<!-- prjctDetailsBlock -->
+			<!-- prjctDetailsBlock -->
+			<section class="contentBlock prjctDetailsBlock position-relative pb-0">
+				<div class="container">
+					<div class="row mb-3">
+						<div class="col-12 col-sm-10 col-xl-11">
+							<!-- prjctDetaiIImageSlider -->
+							<div class="prjctDetaiIImageSlider slickSlider">
+								<div>
+									<!-- pdisImage -->
+									<div class="pdisImage bgCover" style="background-image: url(/media/{{ project.image_1 }});">
+										<img class="sr-only" src="/media/{{ project.image_1 }}" alt="image description">
+									</div>
+								</div>
+								<div>
+									<!-- pdisImage -->
+									<div class="pdisImage bgCover" style="background-image: url(/media/{{ project.image_2 }});">
+										<img class="sr-only" src="/media/{{ project.image_2 }}" alt="image description">
+									</div>
+								</div>
+								<div>
+									<!-- pdisImage -->
+									<div class="pdisImage bgCover" style="background-image: url(/media/{{ project.image_3 }});">
+										<img class="sr-only" src="/media/{{ project.image_3 }}" alt="image description">
+									</div>
+								</div>
+								<div>
+									<!-- pdisImage -->
+									<div class="pdisImage bgCover" style="background-image: url(/media/{{ project.image_4 }});">
+										<img class="sr-only" src="/media/{{ project.image_4 }}" alt="image description">
+									</div>
+								</div>
+								<div>
+									<!-- pdisImage -->
+									<div class="pdisImage bgCover" style="background-image: url(/media/{{ project.image_5 }});">
+										<img class="sr-only" src="/media/{{ project.image_5 }}" alt="image description">
+									</div>
+								</div>
+<!--								<div>-->
+<!--									&lt;!&ndash; pdisImage &ndash;&gt;-->
+<!--									<div class="pdisImage bgCover" style="background-image: url(http://placehold.it/1010x610);">-->
+<!--										<img class="sr-only" src="http://placehold.it/1010x610" alt="image description">-->
+<!--									</div>-->
+<!--								</div>-->
+<!--								<div>-->
+<!--									&lt;!&ndash; pdisImage &ndash;&gt;-->
+<!--									<div class="pdisImage bgCover" style="background-image: url(http://placehold.it/1010x610i);">-->
+<!--										<img class="sr-only" src="http://placehold.it/1010x610" alt="image description">-->
+<!--									</div>-->
+<!--								</div>-->
+<!--								<div>-->
+<!--									&lt;!&ndash; pdisImage &ndash;&gt;-->
+<!--									<div class="pdisImage bgCover" style="background-image: url(http://placehold.it/1010x610);">-->
+<!--										<img class="sr-only" src="http://placehold.it/1010x610" alt="image description">-->
+<!--									</div>-->
+<!--								</div>-->
+							</div>
+						</div>
+						<div class="col-12 col-sm-2 col-xl-1">
+							<!-- pdssvSliderWrap -->
+							<div class="pdssvSliderWrap">
+								<!-- prjctDtSliderSwitcher -->
+								<div class="prjctDtSliderSwitcher slickSlider">
+									<div>
+										<!-- pdssImage -->
+										<div class="pdssImage hasOver">
+											<img class="d-block w-100" src="/media/{{ project.image_1 }}" alt="image description">
+										</div>
+									</div>
+									<div>
+										<!-- pdssImage -->
+										<div class="pdssImage hasOver">
+											<img class="d-block w-100" src="/media/{{ project.image_2 }}" alt="image description">
+										</div>
+									</div>
+									<div>
+										<!-- pdssImage -->
+										<div class="pdssImage hasOver">
+											<img class="d-block w-100" src="/media/{{ project.image_3 }}" alt="image description">
+										</div>
+									</div>
+									<div>
+										<!-- pdssImage -->
+										<div class="pdssImage hasOver">
+											<img class="d-block w-100" src="/media/{{ project.image_4 }}" alt="image description">
+										</div>
+									</div>
+									<div>
+										<!-- pdssImage -->
+										<div class="pdssImage hasOver">
+											<img class="d-block w-100" src="/media/{{ project.image_5 }}" alt="image description">
+										</div>
+									</div>
+									<div>
+										<!-- pdssImage -->
+										<div class="pdssImage hasOver">
+											<img class="d-block w-100" src="http://placehold.it/130x130" alt="image description">
+										</div>
+									</div>
+									<div>
+										<!-- pdssImage -->
+										<div class="pdssImage hasOver">
+											<img class="d-block w-100" src="http://placehold.it/130x130" alt="image description">
+										</div>
+									</div>
+									<div>
+										<!-- pdssImage -->
+										<div class="pdssImage hasOver">
+											<img class="d-block w-100" src="http://placehold.it/130x130" alt="image description">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 col-md-7 mb-3 mb-md-0">
+							<h3 class="position-relative">О Проекте</h3>
+							<p>{{ project.text }}</p>
+						</div>
+						<div class="col-12 col-md-5 offset-xl-1 col-xl-4">
+							<h3 class="text-capitalize position-relative mb-0">Детали Проекта</h3>
+							<!-- pdDescrTable -->
+							<table class="table pdDescrTable">
+								<!-- tbody -->
+								<tbody>
+									<tr>
+										<td>
+											<!-- tdWrap -->
+											<div class="tdWrap">
+												Location:
+											</div>
+										</td>
+										<td>
+											<!-- tdWrap -->
+											<div class="tdWrap">
+												New York United States
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<!-- tdWrap -->
+											<div class="tdWrap">
+												Project start:
+											</div>
+										</td>
+										<td>
+											<!-- tdWrap -->
+											<div class="tdWrap">
+												<time datetime="2011-01-12">2015 june</time>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<!-- tdWrap -->
+											<div class="tdWrap">
+												Project Complete:
+											</div>
+										</td>
+										<td>
+											<!-- tdWrap -->
+											<div class="tdWrap">
+												<time datetime="2011-01-12">2016 august</time>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<!-- tdWrap -->
+											<div class="tdWrap">
+												Price:
+											</div>
+										</td>
+										<td>
+											<!-- tdWrap -->
+											<div class="tdWrap">
+												$40m
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- prejectsListingBlock -->
+			<section class="contentBlock prejectsListingBlock position-relative">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<!-- headingHead -->
+							<header class="headingHead text-center mb-4">
+								<!-- blockH -->
+								<h2 class="text-uppercase blockH font-weight-bold mb-0">
+									<!-- hTitle -->
+									<strong class="font-weight-normal hTitle d-block fontBase">Проекты</strong>
+									<span class="d-block">Наши Работы</span>
+								</h2>
+							</header>
+						</div>
+					</div>
+				</div>
+				<div class="row d-block">
+					<!-- prPostsSlider -->
+					<div class="prPostsSlider prPostsSlider02 slickSlider">
+						<div>
+							<div class="col-12">
+								<!-- prPostColumn -->
+								<article class="prPostColumn prPostColumn02 hasOver position-relative">
+									<!-- prColumnBgCover -->
+									<span class="bgCover prColumnBgCover d-block" style="background-image: url(http://placehold.it/360x500);">
+										<img class="sr-only" src="http://placehold.it/360x500" alt="image description">
+									</span>
+									<!-- prPostCaption -->
+									<div class="prPostCaption bg-white rounded">
+										<h3>
+											<!-- hTitle -->
+											<strong class="font-weight-normal hTitle d-block fontBase">Vintage</strong>
+											<span class="d-block"><a href="project-details.html">Kitchen furniture for you.</a></span>
+										</h3>
+									</div>
+								</article>
+							</div>
+						</div>
+						<div>
+							<div class="col-12">
+								<!-- prPostColumn -->
+								<article class="prPostColumn prPostColumn02 hasOver position-relative">
+									<!-- prColumnBgCover -->
+									<span class="bgCover prColumnBgCover d-block" style="background-image: url(http://placehold.it/360x500);">
+										<img class="sr-only" src="http://placehold.it/360x500" alt="image description">
+									</span>
+									<!-- prPostCaption -->
+									<div class="prPostCaption bg-white rounded">
+										<h3>
+											<!-- hTitle -->
+											<strong class="font-weight-normal hTitle d-block fontBase">Vintage</strong>
+											<span class="d-block"><a href="project-details.html">Kitchen furniture for you.</a></span>
+										</h3>
+									</div>
+								</article>
+							</div>
+						</div>
+						<div>
+							<div class="col-12">
+								<!-- prPostColumn -->
+								<article class="prPostColumn prPostColumn02 hasOver position-relative">
+									<!-- prColumnBgCover -->
+									<span class="bgCover prColumnBgCover d-block" style="background-image: url(http://placehold.it/360x500);">
+										<img class="sr-only" src="http://placehold.it/360x500" alt="image description">
+									</span>
+									<!-- prPostCaption -->
+									<div class="prPostCaption bg-white rounded">
+										<h3>
+											<!-- hTitle -->
+											<strong class="font-weight-normal hTitle d-block fontBase">Minimal</strong>
+											<span class="d-block"><a href="project-details.html">Kitchen furniture for you.</a></span>
+										</h3>
+									</div>
+								</article>
+							</div>
+						</div>
+						<div>
+							<div class="col-12">
+								<!-- prPostColumn -->
+								<article class="prPostColumn prPostColumn02 hasOver position-relative">
+									<!-- prColumnBgCover -->
+									<span class="bgCover prColumnBgCover d-block" style="background-image: url(http://placehold.it/360x500);">
+										<img class="sr-only" src="http://placehold.it/360x500" alt="image description">
+									</span>
+									<!-- prPostCaption -->
+									<div class="prPostCaption bg-white rounded">
+										<h3>
+											<!-- hTitle -->
+											<strong class="font-weight-normal hTitle d-block fontBase">Coastal</strong>
+											<span class="d-block"><a href="project-details.html">Kitchen furniture for you.</a></span>
+										</h3>
+									</div>
+								</article>
+							</div>
+						</div>
+						<div>
+							<div class="col-12">
+								<!-- prPostColumn -->
+								<article class="prPostColumn prPostColumn02 hasOver position-relative">
+									<!-- prColumnBgCover -->
+									<span class="bgCover prColumnBgCover d-block" style="background-image: url(http://placehold.it/360x500);">
+										<img class="sr-only" src="http://placehold.it/360x500" alt="image description">
+									</span>
+									<!-- prPostCaption -->
+									<div class="prPostCaption bg-white rounded">
+										<h3>
+											<!-- hTitle -->
+											<strong class="font-weight-normal hTitle d-block fontBase">Morden</strong>
+											<span class="d-block"><a href="project-details.html">Kitchen furniture for you.</a></span>
+										</h3>
+									</div>
+								</article>
+							</div>
+						</div>
+						<div>
+							<div class="col-12">
+								<!-- prPostColumn -->
+								<article class="prPostColumn prPostColumn02 hasOver position-relative">
+									<!-- prColumnBgCover -->
+									<span class="bgCover prColumnBgCover d-block" style="background-image: url(http://placehold.it/360x500);">
+										<img class="sr-only" src="http://placehold.it/360x500" alt="image description">
+									</span>
+									<!-- prPostCaption -->
+									<div class="prPostCaption bg-white rounded">
+										<h3>
+											<!-- hTitle -->
+											<strong class="font-weight-normal hTitle d-block fontBase">Morden</strong>
+											<span class="d-block"><a href="project-details.html">Kitchen furniture for you.</a></span>
+										</h3>
+									</div>
+								</article>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+{% endblock content %}

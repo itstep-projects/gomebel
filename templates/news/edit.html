@@ -1,0 +1,52 @@
+{% extends 'layout/base.html' %}
+
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+
+{% block content %}
+{% include 'layout/under_baner.html' %}
+<div id="content" class="container">
+    <hr>
+    <form id="post_edit_form" method="post" action="/news/edit/{{ post.id }}">
+        {% csrf_token %}
+        <div>
+            {% for field in form %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+                    <div>
+                        {{ field }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <p style="margin-top: 30px">
+            <button id="submit" class="btn btnTheme text-uppercase" type="submit" data-hover="Отптавить" style="width: 150px">
+                <span class="d-block btnText">Публиковать</span>
+            </button>
+            <button class="btn btnTheme text-uppercase" type="reset" data-hover="Очистить" style="width: 150px">
+                <span class="d-block btnText">Сброс</span>
+            </button>
+        </p>
+    </form>
+    <hr>
+    <script>
+        CKEDITOR.replace( 'text' );
+    </script>
+</div>
+<style>
+    .form-group input {
+        width: 50%;
+        height: 30px;
+    }
+    .form-group textarea {
+        width: 50%;
+    }
+    #b1, #b2 {
+        width: 150px;
+    }
+</style>
+
+{% endblock content %}

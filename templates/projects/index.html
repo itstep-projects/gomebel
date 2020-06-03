@@ -1,0 +1,65 @@
+{% extends 'layout/base.html' %}
+
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+
+{% block content %}
+{% include 'layout/under_baner.html' %}
+			<!-- contentBlock -->
+			<section class="contentBlock pb-1">
+				<div class="container">
+					{% if user.username == 'superadmin' %}
+						<a href="create" class="btn btnTheme text-uppercase" style="align=right" data-hover="Добавить">
+							<span class="d-block btnText" >Добавить Проект</span>
+						</a>
+					{% endif %}
+
+                    {% for project in page_obj %}
+					<!-- prjctDescrColumn -->
+					<article class="prjctDescrColumn hasMbBottom {% cycle '' 'prjctDescrColumnOrderInverse text-md-right' %} hasOver">
+						<div class="row align-items-md-center">
+							<div class="col-12 col-md-6 order-md-{% cycle '1' '2' %} colImage">
+								<!-- prjctColumnImageWrap -->
+								<div class="prjctColumnImageWrap {% cycle 'alignleft' 'alignright' %} rounded">
+									<img class="d-block w-100 rounded" src="/media/{{ project.image_1 }}" alt="image description">
+								</div>
+							</div>
+							<div class="col-12 col-md-6 order-md-{% cycle '2' '1' %} colDescr">
+								<!-- prjctTextHolder -->
+								<div class="bg-white hasShadow rounded prjctTextHolder position-relative">
+									<!-- postTitleTextTag -->
+									<strong class="d-block postTitleTextTag font-weight-normal text-capitalize">{{ project.category.name }}</strong>
+									<h3 class="text-capitalize">Название Проекта: <a href="details/{{ project.id }}">{{ project.name }}</a></h3>
+									<p>{{ project.about }}</p>
+									<a href="details/{{ project.id }}" class="btnMore d-inline-block">Подробнее <i class="icn ei_arrow_right"><span class="sr-only">icon</span></i></a>
+								</div>
+							</div>
+						</div>
+					</article>
+                    {% endfor %}
+                  <!-- navigation -->
+                    <nav aria-label="Page navigation">
+                        <!-- pagination -->
+                        <ul class="pagination pagePagination text-center mb-0">
+                            {% if page_obj.has_previous %}
+                            <li class="page-item"><a class="page-link" href="?page=1"><i class="fas fa-angle-left"><span class="sr-only">icon</span></i></a></li>
+                            <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a></li>
+                            {% endif %}
+                            <li class="page-item active">
+                                <a class="page-link" href="{{ page_obj.number }}">{{ page_obj.number }}<span class="sr-only">(current)</span></a>
+                            </li>
+                            {% if page_obj.has_next %}
+                            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a></li>
+                            <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}"><i class="fas fa-angle-right"><span class="sr-only">icon</span></i></a></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+				</div>
+			</section>
+{% endblock content %}
+
+
+

@@ -1,0 +1,154 @@
+<!-- pageHeaderTopBar -->
+<div class="pageHeaderTopBar bg-light">
+	<div class="container clearfix position-relative">
+		<div class="row">
+			<div class="col-3 col-lg-6">
+				<!-- topBarContactList -->
+				<ul class="list-unstyled topBarContactList align-items-center mb-0 d-none d-md-flex">
+					<li>
+						<a href="tel:&#049;&#050;&#051;&#052;&#053;&#054;&#055;&#056;&#057;&#049;&#048;">
+							<i class="fas fa-phone fa-flip-horizontal icn"><span class="sr-only">icon</span></i>
+							<span class="d-none d-lg-inline">+12 345-678-910</span>
+						</a>
+					</li>
+					<li>
+						<a href="mailto:&#073;&#110;&#102;&#111;&#046;&#100;&#101;&#101;&#114;&#099;&#114;&#101;&#097;&#116;&#105;&#118;&#101;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">
+							<i class="fas fa-envelope icn"><span class="sr-only">icon</span></i>
+							<span class="d-none d-lg-inline">GoMebel@gmail.com</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-9 col-lg-6 d-flex justify-content-end position-static">
+				<!-- topBarSearchForm -->
+				<form action="#" class="topBarSearchForm">
+					<!-- searhFormCollpase -->
+					<div class="form-group collapse mb-0" id="searhFormCollpase">
+						<input type="text" class="form-control d-block" placeholder="Search&hellip;">
+						<button type="button" class="ei_icon_search buttonReset"><span class="sr-only">search</span></button>
+					</div>
+				</form>
+				<!-- loginLinksList -->
+				{% if not user.is_authenticated %}
+				<ul class="list-unstyled loginLinksList text-uppercase d-flex mb-0">
+					<li class="hasIcon">
+						<a href="/accounts/sign_in">
+							<i class="ei_icon_lock icn"><span class="sr-only">icon</span></i>
+							<span class="d-none d-md-block">Вход</span>
+						</a>
+					</li>
+					<li class="d-none d-md-block">
+						<a href="/accounts/sign_up">Регистрация</a>
+					</li>
+				</ul>
+				{% else %}
+				<ul class="list-unstyled loginLinksList text-uppercase d-flex mb-0">
+					<li class="hasIcon">
+						<a href="/accounts/sign_out">
+							<i class="ei_icon_lock-open icn"><span class="sr-only">icon</span></i>
+							<span class="d-none d-md-block">Выход</span>
+						</a>
+					</li>
+					<li class="d-none d-md-block">
+						<a href="/accounts/profile">{{ user.username }}</a>
+					</li>
+				</ul>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+<div class="headerFixer">
+	<div class="bg-white">
+		<!-- pageHeaderHolder -->
+		<div class="container clearfix pageHeaderHolder">
+			<!-- logo -->
+			<div class="logo alignleft">
+				<a href="/">
+					<img src="/static/img/logo.png" alt="GoMebel">
+				</a>
+			</div>
+			<!-- pageNavHolder -->
+			<div class="pageNavHolder alignright d-flex justify-content-end align-items-md-start" style="width: 900px">
+				<!-- topBarSearchFormOpener -->
+				<a class="topBarSearchFormOpener d-flex d-md-none align-items-center justify-content-center flex-shrink-0" data-toggle="collapse" href="#searhFormCollpase" role="button" aria-expanded="false" aria-controls="searhFormCollpase">
+					<i class="fas fa-search"><span class="sr-only">icon</span></i>
+				</a>
+				<!-- pageNav navbar -->
+				<nav id="pageNav" class="navbar navbar-expand-lg order-lg-1">
+					<!-- pageMainNavOpener -->
+					<button class="navbar-toggler pageMainNavOpener" type="button" data-toggle="collapse" data-target="#pageMainNavCollapse" aria-controls="pageMainNavCollapse" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<!-- mainNavCollapse navbar collapse -->
+					<div class="collapse navbar-collapse mainNavCollapse" id="pageMainNavCollapse">
+						<!-- pageMainNavigation navbar nav -->
+						<ul class="navbar-nav pageMainNavigation justify-content-md-end">
+							<li class="nav-item">
+								<a class="nav-link fwMedium text-uppercase" href="/" role="button" aria-haspopup="true" aria-expanded="false">Главная <span class="sr-only">(current)</span></a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link fwMedium text-uppercase" href="/projects/index" role="button" aria-haspopup="true" aria-expanded="false">Проекты</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link fwMedium text-uppercase dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Page</a>
+								<!-- mainNavDropdown dropdown menu -->
+								<div class="dropdown-menu mainNavDropdown text-uppercase">
+									<!-- navDropdownList -->
+									<ul class="list-unstyled navDropdownList">
+										<li>
+											<a class="dropdown-item" href="aboutus.html">About Us</a>
+										</li>
+										<!-- dropdown submenu -->
+										<li class="dropdown-submenu">
+											<a class="dropdown-item dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gallery</a>
+											<!-- mainNavDropdown dropdown menu -->
+											<div class="dropdown-menu mainNavDropdown text-uppercase">
+												<!-- navDropdownList -->
+												<ul class="list-unstyled navDropdownList">
+													<li>
+														<a class="dropdown-item" href="gallery.html">Gallery 1</a>
+													</li>
+												</ul>
+											</div>
+										</li>
+										<li class="dropdown-submenu">
+											<a class="dropdown-item dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Our Services</a>
+											<!-- mainNavDropdown dropdown menu -->
+											<div class="dropdown-menu mainNavDropdown text-uppercase">
+												<!-- navDropdownList -->
+												<ul class="list-unstyled navDropdownList">
+													<li>
+														<a class="dropdown-item" href="services.html">Service 1</a>
+													</li>
+												</ul>
+											</div>
+										</li>
+										<li>
+											<a class="dropdown-item" href="booking.html">Book Design</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="404page.html">404 Page</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="comingsoon.html">Coming Soon</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link fwMedium text-uppercase" href="/orders/form" role="button" aria-haspopup="true" aria-expanded="false">Заказать</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link fwMedium text-uppercase" href="/news/index" role="button" aria-haspopup="true" aria-expanded="false">Про Мебель</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link fwMedium text-uppercase" href="/home/contacts" role="button" aria-haspopup="true" aria-expanded="false">Контакты</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>

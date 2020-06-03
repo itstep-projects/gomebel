@@ -1,0 +1,144 @@
+{% extends 'layout/base.html' %}
+
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+
+{% block content %}
+            {% include 'layout/under_baner.html' %}
+            <!-- contentAreaWrap -->
+			<div class="contentAreaWrap contentBlock">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 col-md-8 col-lg-9">
+							<!-- content -->
+							<section id="content" class="mb-5">
+								{% if user.username == 'superadmin' %}
+								<a href="create" class="btn btnTheme text-uppercase" data-hover="Добавить новость">
+									<span class="d-block btnText">Добавить новость</span>
+								</a>
+								{% endif %}
+								{% for post in page_obj %}
+                                <!-- ltPostColumn -->
+								<article class="ltPostColumn mbBottomMore hasOver ltPostColumn03 d-md-flex align-items-lg-center">
+									<!-- alignleft -->
+									<div class="alignleft imageLarge rounded position-relative flex-shrink-0">
+										<img class="rounded d-block w-100" src="/media/{{ post.image }}" alt="image description">
+									</div>
+									<!-- descriptionWrap -->
+									<div class="descriptionWrap topAdjust">
+										<em class="posterTagline d-block pt-1">
+											<span class="d-inline-block"><a href="details/{{ post.id }}">{{ post.author }}</a></span>
+											<span class="sep d-inline-block">|</span>
+											<time datetime="2011-01-12" class="d-inline-block"><a href="details/{{ post.id }}">{{ post.published }}</a></time>
+										</em>
+										<div class="wrap">
+											<h3><a href="details/{{ post.id }}">{{ post.title }}</a></h3>
+											<p>{{ post.about }}</p>
+											{% if user.username == 'superadmin' %}
+												<div id="tag_cloud-2" class="widget widget_tag_cloud" style="margin-bottom: 0px">
+													<a href="details/{{ post.id }}" class="d-inline-block tagcloudItem rounded">Подробнее</a>
+													<a href="edit/{{ post.id }}" class="d-inline-block tagcloudItem rounded">Изменить</a>
+													<a href="delete/{{ post.id }}" class="d-inline-block tagcloudItem rounded">Удалить</a>
+												</div>
+											{% else %}
+												<a href="details/{{ post.id }}" class="btnMore ">Подробнее <i class="icn ei_arrow_right"><span class="sr-only">icon</span></i></a>
+											{% endif %}
+                                        </div>
+									</div>
+								</article>
+                                {% endfor %}
+
+                                <!-- navigation -->
+								<nav aria-label="Page navigation">
+									<!-- pagination -->
+									<ul class="pagination pagePagination text-center mb-0">
+										{% if page_obj.has_previous %}
+										<li class="page-item"><a class="page-link" href="?page=1"><i class="fas fa-angle-left"><span class="sr-only">icon</span></i></a></li>
+										<li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a></li>
+										{% endif %}
+										<li class="page-item active">
+											<a class="page-link" href="{{ page_obj.number }}">{{ page_obj.number }}<span class="sr-only">(current)</span></a>
+										</li>
+										{% if page_obj.has_next %}
+										<li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a></li>
+										<li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}"><i class="fas fa-angle-right"><span class="sr-only">icon</span></i></a></li>
+										{% endif %}
+									</ul>
+								</nav>
+							</section>
+						</div>
+                        <div class="col-12 col-md-4 col-lg-3">
+							<!-- sidebar -->
+							<aside id="sidebar">
+								<!-- widget search -->
+								<div class="widget widget_search">
+									<h3 class="sr-only text-capitalize">Search</h3>
+									<!-- search form -->
+									<form action="javascript:void(0);" class="search-form position-relative" method="get">
+										<input type="search" class="form-control d-block w-100" placeholder="Searching&hellip;" name="s">
+										<button type="button" class="ei_icon_search buttonReset"><span class="sr-only">search</span></button>
+									</form>
+								</div>
+								<!-- widget categories -->
+								<nav class="widget widget_categories">
+									<h3 class="text-capitalize">Product Categories</h3>
+									<ul class="m-0 p-0 list-unstyled">
+										<li class="cat-item cat-item1"><a href="blog-detail.html" class="position-relative d-block">Kitchen Room</a></li>
+										<li class="cat-item cat-item2"><a href="blog-detail.html" class="position-relative d-block">Event</a></li>
+										<li class="cat-item cat-item3"><a href="blog-detail.html" class="position-relative d-block">Furniture</a></li>
+										<li class="cat-item cat-item4"><a href="blog-detail.html" class="position-relative d-block">Building Kitchen</a></li>
+										<li class="cat-item cat-item5"><a href="blog-detail.html" class="position-relative d-block">Kitchen Equipment</a></li>
+									</ul>
+								</nav>
+								<!-- rpListWidget -->
+								<div class="widget rpListWidget">
+									<h3 class="text-capitalize">Recent Post</h3>
+									<ul class="list-unstyled pl-0 mb-0">
+										<li class="hasOver">
+											<!-- imgWrap -->
+											<div class="alignleft imgWrap imgWrap2 text-center">
+												<a href="javascript:void(0);">
+													<img src="http://placehold.it/70x70" alt="image description">
+												</a>
+											</div>
+											<div class="descrWrap">
+												<time datetime="2011-01-12" class="d-block"><em>Mar 19, 2018</em></time>
+												<h4><a href="blog-detail.html">Curatorial lowship Deadline</a></h4>
+											</div>
+										</li>
+										<li class="hasOver">
+											<!-- imgWrap -->
+											<div class="alignleft imgWrap imgWrap2 text-center">
+												<a href="javascript:void(0);">
+													<img src="http://placehold.it/70x70" alt="image description">
+												</a>
+											</div>
+											<div class="descrWrap">
+												<time datetime="2011-01-12" class="d-block"><em>Mar 19, 2018</em></time>
+												<h4><a href="blog-detail.html">John Cale and Lawrence</a></h4>
+											</div>
+										</li>
+										<li class="hasOver">
+											<!-- imgWrap -->
+											<div class="alignleft imgWrap imgWrap2 text-center">
+												<a href="javascript:void(0);">
+													<img src="http://placehold.it/70x70" alt="image description">
+												</a>
+											</div>
+											<div class="descrWrap">
+												<time datetime="2011-01-12" class="d-block"><em>Mar 19, 2018</em></time>
+												<h4><a href="blog-detail.html">The Kitchen announces Winter</a></h4>
+											</div>
+										</li>
+									</ul>
+								</div>
+                            </aside>
+						</div>
+					</div>
+				</div>
+			</div>
+
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends 'layout/base.html' %}
+
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+
+{% block content %}
+{% include 'layout/under_baner.html' %}
+<div class="container" style="text-align: center">
+    <hr>
+    <h1>Страничка в разработке)</h1>
+    <p class="lead">Отправьте форму с заказом </p>
+    <p class="lead">Уточните детали</p>
+    <p class="lead">Согласуйте материалы и фурнитуру</p>
+    <p class="lead">Проведите оплату</p>
+    <p class="lead">Примите доставку</p>
+    <p class="lead">Наслаждайтесь шикарной мебелью :)</p>
+
+<!--    <form action=""></form>-->
+    <p style="margin-top: 30px">
+        <button id="submit" class="btn btnTheme text-uppercase" type="submit" data-hover="Отптавить" style="width: 150px">
+            <span class="d-block btnText">Отправить</span>
+        </button>
+    </p>
+    <hr>
+</div>
+{% endblock content %}

@@ -1,0 +1,49 @@
+{% extends 'layout/base.html' %}
+
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+
+{% block content %}
+    {% load static %}
+    {% include 'layout/under_baner.html' %}
+    <!-- registration form-->
+    <div id="content" class="container" align="center" >
+        <aside class="widget widgetCtForm hasShadow bg-white mb-4">
+        <form id="form1" action="/accounts/sign_up" method="post" onsubmit="return false">
+            {%  csrf_token %}
+            <p>
+                <label for="login">Логин</label><br>
+                <input type="text" id="login" name="login" class="form-control w-25 d-block" required>
+                <div id="login_mess" class="mess"></div>
+            </p>
+            <p>
+                <label for="pass1">Пароль</label><br>
+                <input type="password" id="pass1" name="pass1" class="inp" required>
+                <div id="pass1_mess" class="mess"></div>
+            </p>
+            <p>
+                <label for="pass2">Повтор</label><br>
+                <input type="password" id="pass2" name="pass2" class="inp" required>
+                <div id="pass2_mess" class="mess"></div>
+            </p>
+            <p>
+                <label for="email">Е-mail</label><br>
+                <input type="email" id="email" name="email" class="inp" required>
+                <div id="email_mess" class="mess"></div>
+            </p>
+            <p style="margin-top: 30px">
+                <button id="submit" class="btn btnTheme text-uppercase" type="submit" data-hover="Отптавить" style="width: 150px">
+                    <span class="d-block btnText">Регистрация</span>
+                </button>
+                <button class="btn btnTheme text-uppercase" type="reset" data-hover="Очистить" style="width: 150px">
+                    <span class="d-block btnText">Сброс</span>
+                </button>
+            </p>
+        </form>
+            </aside>
+    </div>
+    <script src="{% static 'js/sign_up.js' %}"></script>
+{% endblock content %}

@@ -1,0 +1,343 @@
+{% extends 'layout/base.html' %}
+
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+
+{% block content %}
+{% include 'layout/under_baner.html' %}
+
+            <!-- contentAreaWrap -->
+			<section class="contentAreaWrap contentBlock">
+				<div class="container">
+					<!-- bCenterImage -->
+					<div class="row">
+						<div class="col-12 col-md-8 col-lg-9 offset-xl-1 col-xl-7">
+							<!-- content -->
+							<article id="content" class="mb-5">
+                                <!-- imgLignCenter -->
+								<div class="aligncenter imgLignCenter" style="margin-top: 0px">
+									<img class="d-block w-100" src="/media/{{ post.image }}" alt="image description">
+								</div>
+								<!-- btHHead -->
+								<header class="btHHead">
+									<h1>{{ post.title }}</h1>
+									<div class="row">
+										<div class="col-12 col-md-5">
+											<!-- bdText -->
+											<em class="bdText">{{ post.author }} <span class="sep">|</span> <time datetime="2011-01-12">{{ post.published }}</time></em>
+										</div>
+										<div class="col-12 col-md-7">
+											<!-- statusesList -->
+											<ul class="list-unstyled statusesList d-flex justify-content-end align-items-center mb-0">
+												<li>
+													<a href="javascript:void(0);">
+														<i class="icn fas fa-comment"><span class="sr-only">icon</span></i>
+														<span>35</span>
+													</a>
+												</li>
+												<li>
+													<a href="javascript:void(0);">
+														<i class="icn fas fa-eye"><span class="sr-only">icon</span></i>
+														<span>1.142</span>
+													</a>
+												</li>
+												<li>
+													<a href="javascript:void(0);">
+														<i class="icn fas fa-thumbs-up"><span class="sr-only">icon</span></i>
+														<span>6</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</header>
+								{% autoescape off %}{{ post.text }}{% endautoescape %}
+								<!-- quoteDefault -->
+								<blockquote class="quoteDefault bg-light text-dark position-relative">
+									<q class="d-block">&ldquo;If you’re going to try, go all the way. There is no other feeling like that. You will be alone with the gods.&rdquo;</q>
+									<cite class="d-block">Ollie Schneider - CEO Deercreative</cite>
+								</blockquote>
+								<p>Programmable coffee pots are nothing new. But how many times have you gone to bed at night forgetting to set the timer and fill the coffee pot, ensuring you have a hot cup first thing in the morning without having to do anything?</p>
+
+								<h3 class="text-capitalize mb-4">Food Prep Pad</h3>
+								<p>A new year often brings resolutions; for many, those include eating more healthfully. Whether you are looking to lose weight or simply improve your overall health, keeping track of what you eat plays an important role.</p>
+								<p>The Orange Chef Prep Pad works with your iPad or iPhone to serve as not only a digital scale, but also a nutritional guide. It has a “food library” of more than 300,000 items, and gives you the breakdown of calories, protein and carbs.</p>
+								<!-- widget tag cloud -->
+								<div class="widget widget_tag_cloud m-0">
+									<h3 class="sr-only">Tag</h3>
+									<!-- tagcloud -->
+									<div class="tagcloud d-flex flex-wrap text-capitalize">
+										<!-- tagcloudItem -->
+										<a href="javascript:void(0);" class="d-inline-block tagcloudItem rounded">Chairs</a>
+										<!-- tagcloudItem -->
+										<a href="javascript:void(0);" class="d-inline-block tagcloudItem rounded">Table</a>
+									</div>
+								</div>
+								<hr class="d-block">
+								<!-- rpPostsWrap -->
+								<div class="rpPostsWrap">
+									<div class="row">
+										<div class="col-8 position-relative">
+											<h2>Relatest Post</h2>
+										</div>
+									</div>
+									<div class="row d-block">
+										<!-- rpPosterSlider -->
+										<div class="rpPosterSlider slickSlider">
+											<div class="col-12">
+												<!-- ltPostColumn -->
+												<article class="ltPostColumn ltPostColumn02 hasOver mb-0">
+													<!-- aligncenter -->
+													<div class="aligncenter position-relative rounded">
+														<img class="rounded" src="http://placehold.it/320x210" alt="image description">
+													</div>
+													<!-- posterTagline -->
+													<em class="posterTagline d-block fwMedium pt-1">
+														<span class="d-inline-block">By <a href="blog.html">admin</a></span>
+														<span class="sep d-inline-block">|</span>
+														<time datetime="2011-01-12" class="d-inline-block"><a href="blog.html">Aug 20, 2018</a></time>
+													</em>
+													<h3><a href="blog.html">13 ways to add space (and value) to your home</a></h3>
+													<a href="blog.html" class="btnMore d-inline-block">Details <i class="icn ei_arrow_right"><span class="sr-only">icon</span></i></a>
+												</article>
+											</div>
+											<div class="col-12">
+												<!-- ltPostColumn -->
+												<article class="ltPostColumn ltPostColumn02 hasOver mb-0">
+													<!-- aligncenter -->
+													<div class="aligncenter position-relative rounded">
+														<img class="rounded" src="http://placehold.it/320x210" alt="image description">
+													</div>
+													<!-- posterTagline -->
+													<em class="posterTagline d-block fwMedium pt-1">
+														<span class="d-inline-block">By <a href="blog.html">admin</a></span>
+														<span class="sep d-inline-block">|</span>
+														<time datetime="2011-01-12" class="d-inline-block"><a href="blog.html">Aug 16, 2018</a></time>
+													</em>
+													<h3><a href="blog.html">Dualit's Kit Miles collab is a mono chrome delight</a></h3>
+													<a href="blog.html" class="btnMore d-inline-block">Details <i class="icn ei_arrow_right"><span class="sr-only">icon</span></i></a>
+												</article>
+											</div>
+											<div class="col-12">
+												<!-- ltPostColumn -->
+												<article class="ltPostColumn ltPostColumn02 mb-0">
+													<!-- aligncenter -->
+													<div class="aligncenter position-relative rounded">
+														<img class="rounded" src="http://placehold.it/320x210" alt="image description">
+													</div>
+													<!-- posterTagline -->
+													<em class="posterTagline d-block fwMedium pt-1">
+														<span class="d-inline-block">By <a href="blog.html">admin</a></span>
+														<span class="sep d-inline-block">|</span>
+														<time datetime="2011-01-12" class="d-inline-block"><a href="blog.html">Aug 20, 2018</a></time>
+													</em>
+													<h3><a href="blog.html">13 ways to add space (and value) to your home</a></h3>
+													<a href="blog.html" class="btnMore d-inline-block">Details <i class="icn ei_arrow_right"><span class="sr-only">icon</span></i></a>
+												</article>
+											</div>
+											<div class="col-12">
+												<!-- ltPostColumn -->
+												<article class="ltPostColumn ltPostColumn02 mb-0">
+													<!-- aligncenter -->
+													<div class="aligncenter position-relative rounded">
+														<img class="rounded" src="http://placehold.it/320x210" alt="image description">
+													</div>
+													<!-- posterTagline -->
+													<em class="posterTagline d-block fwMedium pt-1">
+														<span class="d-inline-block">By <a href="blog.html">admin</a></span>
+														<span class="sep d-inline-block">|</span>
+														<time datetime="2011-01-12" class="d-inline-block"><a href="blog.html">Aug 16, 2018</a></time>
+													</em>
+													<h3><a href="blog.html">Dualit's Kit Miles collab is a mono chrome delight</a></h3>
+													<a href="blog.html" class="btnMore d-inline-block">Details <i class="icn ei_arrow_right"><span class="sr-only">icon</span></i></a>
+												</article>
+											</div>
+										</div>
+									</div>
+								</div>
+								<hr class="d-block">
+								<!-- commentsWrap -->
+								<div class="commentsWrap">
+									<h2 class="text-capitalize">3 Comments</h2>
+									<!-- bpCommentsList -->
+									<ul class="list-unstyled bpCommentsList">
+										<li>
+											<!-- cmntWrap -->
+											<div class="clearfix cmntWrap">
+												<!-- avatar holder -->
+												<div class="alignleft avatar-holder rounded-circle">
+													<img class="rounded-circle" src="http://placehold.it/70x70" alt="image description">
+												</div>
+												<!-- descrWrap -->
+												<div class="descrWrap">
+													<time datetime="2011-01-12" class="d-block">Sep 08, 2018</time>
+													<h3 class="text-capitalize"><a href="javascript:void(0);">Calantha Flower</a></h3>
+													<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam.</p>
+													<div class="btnsWrap d-flex">
+														<a href="javascript:void(0);" class="btn btnDefaultOutline text-capitalize" data-hover="Like">
+															<span class="d-block btnText">Like</span>
+														</a>
+														<a href="javascript:void(0);" class="btn btnDefaultOutline text-capitalize" data-hover="Reply">
+															<span class="d-block btnText">Reply</span>
+														</a>
+													</div>
+												</div>
+											</div>
+											<ul class="list-unstyled">
+												<li>
+													<!-- cmntWrap -->
+													<div class="clearfix cmntWrap">
+														<!-- avatar holder -->
+														<div class="alignleft avatar-holder rounded-circle">
+															<img class="rounded-circle" src="http://placehold.it/70x70" alt="image description">
+														</div>
+														<!-- descrWrap -->
+														<div class="descrWrap">
+															<time datetime="2011-01-12" class="d-block">Sep 08, 2018</time>
+															<h3 class="text-capitalize"><a href="javascript:void(0);">Irene Fields</a></h3>
+															<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi</p>
+															<div class="btnsWrap d-flex">
+																<a href="javascript:void(0);" class="btn btnDefaultOutline text-capitalize" data-hover="Like">
+																	<span class="d-block btnText">Like</span>
+																</a>
+																<a href="javascript:void(0);" class="btn btnDefaultOutline text-capitalize" data-hover="Reply">
+																	<span class="d-block btnText">Reply</span>
+																</a>
+															</div>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<!-- cmntWrap -->
+											<div class="clearfix cmntWrap">
+												<!-- avatar holder -->
+												<div class="alignleft avatar-holder rounded-circle">
+													<img class="rounded-circle" src="http://placehold.it/70x70" alt="image description">
+												</div>
+												<!-- descrWrap -->
+												<div class="descrWrap">
+													<time datetime="2011-01-12" class="d-block">Sep 08, 2018</time>
+													<h3 class="text-capitalize"><a href="javascript:void(0);">Ann Moody</a></h3>
+													<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi</p>
+													<div class="btnsWrap d-flex">
+														<a href="javascript:void(0);" class="btn btnDefaultOutline text-capitalize" data-hover="Like">
+															<span class="d-block btnText">Like</span>
+														</a>
+														<a href="javascript:void(0);" class="btn btnDefaultOutline text-capitalize" data-hover="Reply">
+															<span class="d-block btnText">Reply</span>
+														</a>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<hr class="d-block">
+								<!-- comment form -->
+								<form action="javascript:void(0);" class="comment-form">
+									<h2 class="text-capitalize">Leave A Comment</h2>
+									<div class="form-row">
+										<div class="formCol formColHalf">
+											<div class="form-group">
+												<input type="text" class="form-control d-block w-100" placeholder="Name">
+											</div>
+										</div>
+										<div class="formCol formColHalf">
+											<div class="form-group">
+												<input type="email" class="form-control d-block w-100" placeholder="Email">
+											</div>
+										</div>
+										<div class="formCol">
+											<div class="form-group">
+												<textarea class="form-control d-block w-100" placeholder="Messages"></textarea>
+											</div>
+										</div>
+									</div>
+									<button class="btn btnTheme text-uppercase" type="submit" data-hover="Send Message">
+										<span class="d-block btnText">Send Message</span>
+									</button>
+								</form>
+							</article>
+						</div>
+						<div class="col-12 col-md-4 col-lg-3">
+							<!-- sidebar -->
+							<aside id="sidebar">
+								<!-- widgetShare -->
+								<div class="widget widgetShare text-center rounded">
+									<h3 class="text-capitalize">Share</h3>
+									<!-- shareSocialLinks -->
+									<ul class="list-unstyled socialNetworks shareSocialLinks pl-0 text-capitalize">
+										<li>
+											<a href="javascript:void(0);" class="position-relative d-block facebook">
+												<i class="fab fa-facebook-f icn text-center"><span class="sr-only">icon</span></i>
+												<strong class="text font-weight-normal">Facebook</strong>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:void(0);" class="position-relative d-block twitter">
+												<i class="fab fa-twitter icn text-center"><span class="sr-only">icon</span></i>
+												<strong class="text font-weight-normal">Twitter</strong>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:void(0);" class="position-relative d-block google">
+												<i class="fab fa-google-plus-g icn text-center"><span class="sr-only">icon</span></i>
+												<strong class="text font-weight-normal">google</strong>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<!-- widgetProfilerInfo -->
+								<div class="widget widgetProfilerInfo text-center rounded">
+									<!-- picWrap -->
+									<div class="picWrap rounded-circle mx-auto">
+										<img class="rounded-circle" src="http://placehold.it/120x120" alt="Chris Hemsworth">
+									</div>
+									<h3 class="text-capitalize"><a href="javascript:void(0);">Chris Hemsworth</a></h3>
+									<!-- piSocialLinks -->
+									<ul class="list-unstyled socialNetworks d-flex justify-content-center align-items-center piSocialLinks pl-0">
+										<li>
+											<a href="javascript:void(0);">
+												<i class="fab fa-facebook-f icn text-center"><span class="sr-only">icon</span></i>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:void(0);">
+												<i class="fab fa-twitter icn text-center"><span class="sr-only">icon</span></i>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:void(0);">
+												<i class="fab fa-pinterest icn text-center"><span class="sr-only">icon</span></i>
+											</a>
+										</li>
+									</ul>
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing </p>
+									<!-- wpiTable -->
+									<table class="table wpiTable mb-0 text-dark">
+										<thead>
+											<tr>
+												<th class="text-capitalize font-weight-normal">Posted</th>
+												<th class="text-capitalize font-weight-normal">Comment</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>80</td>
+												<td>230</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</aside>
+						</div>
+					</div>
+				</div>
+			</section>
+
+{% endblock content %}
